@@ -1,3 +1,9 @@
 [submodule "modules/allegro5"]
 	path = modules/allegro5
 	url = https://github.com/liballeg/allegro5.git
+[submodule "modules/freetype"]
+	path = modules/freetype
+	url = https://github.com/freetype/freetype.git
+[submodule "modules/harfbuzz"]
+	path = modules/harfbuzz
+	url = https://github.com/harfbuzz/harfbuzz.git
