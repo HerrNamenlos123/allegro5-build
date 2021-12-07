@@ -7,3 +7,6 @@
 [submodule "modules/harfbuzz"]
 	path = modules/harfbuzz
 	url = https://github.com/harfbuzz/harfbuzz.git
+[submodule "modules/allegro5-binaries"]
+	path = modules/allegro5-binaries
+	url = https://github.com/HerrNamenlos123/allegro5-binaries.git
