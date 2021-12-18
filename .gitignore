@@ -30,3 +30,6 @@
 *.exe
 *.out
 *.app
+
+# Allegro 5 binaries submodule
+modules/allegro5-binaries
