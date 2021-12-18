@@ -12,16 +12,21 @@ echo Done
 :: Check if project is configured
 if not exist freetype.sln goto LB_NO_PROJECT
 
+
 :: User information
 echo.
-echo [92mOpening Visual Studio for you:
-echo [92mBuild the project [91mfreetype [92min [91mRELEASE MODE [92mand close the window when you're done![0m
-echo Opening VS in 3 seconds... & Timeout 1 >NUL
-echo Opening VS in 2 seconds... & Timeout 1 >NUL
-echo Opening VS in 1 seconds... & Timeout 1 >NUL
-echo Waiting for Visual Studio to close...
+echo Opening Visual Studio for you after this info:
+echo You must RIGHT-Click the project [91mfreetype[0m, go to [91mProperties[0m and make sure the Configuration at the top is [91mRelease[0m.
+echo "Next, under [91mC/C++[0m -> [91mCode Generation[0m, set [91mRuntime Library[0m to [91mMulti-threaded (/MT)[0m and close the properties panel."
+echo Next, build the project [91mfreetype [0min [91mRELEASE MODE [0mand close the window when you're done![0m
+set /P c4=Did you understand? [Y/n]: 
+set understood=true
+if /I "%c4%" EQU "n" set understood=false
+if /I "%c4%" EQU "N" set understood=false
+if %understood% == false goto LB_NOT_UNDERSTOOD
 
 :: Start Visual Studio
+echo Waiting for Visual Studio to close...
 start /wait freetype.sln
 
 :: Check if it was successful
@@ -42,6 +47,15 @@ set errorlevel=0 & goto :eof  & :: Exit successfully
 :LB_NO_PROJECT
 
 echo [91mProject files not found[0m
+
+set errorlevel=1 & goto :eof  & :: Exit error
+
+
+
+:: Not understood what to do
+:LB_NOT_UNDERSTOOD
+
+echo [91mAborting build process...[0m
 
 set errorlevel=1 & goto :eof  & :: Exit error
 

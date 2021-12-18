@@ -46,6 +46,11 @@ echo [92mAllegro5 was built successfully[0m
 :: =============== Copy allegro5 binaries =================
 cd "%~dp0"
 
+echo | set /p="Copying freetype binaries ... "
+echo.
+xcopy modules\freetype\build\Release\freetype.lib modules\allegro5-binaries\lib\ /K /D /H /Y /Q
+echo Done
+
 echo | set /p="Copying allegro5 binaries ... "
 echo.
 xcopy modules\allegro5\build\lib\RelWithDebInfo\allegro_monolith-static.lib modules\allegro5-binaries\lib\ /K /D /H /Y /Q
