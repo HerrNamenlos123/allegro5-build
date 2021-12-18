@@ -15,7 +15,7 @@ if not exist allegro.sln goto LB_NO_PROJECT
 :: User information
 echo.
 echo [92mOpening Visual Studio for you:
-echo [92mBuild the project [91mallegro5 [92mand close the window when you're done![0m
+echo [92mBuild the project [91mallegro5_monolith [92mand close the window when you're done![0m
 echo Opening VS in 3 seconds... & Timeout 1 >NUL
 echo Opening VS in 2 seconds... & Timeout 1 >NUL
 echo Opening VS in 1 seconds... & Timeout 1 >NUL
@@ -51,10 +51,10 @@ set errorlevel=1 & goto :eof  & :: Exit error
 :LB_NO_BINARIES
 
 echo [91mAllegro5 binaries not found, did you compile in RELEASE mode?[0m
-set /P c=Try again? [Y/n]: 
+set /P c3=Try again? [Y/n]: 
 set repeat=true
-if /I "%c%" EQU "n" set repeat=false
-if /I "%c%" EQU "N" set repeat=false
+if /I "%c3%" EQU "n" set repeat=false
+if /I "%c3%" EQU "N" set repeat=false
 if %repeat% == true goto LB_BUILD
 
 set errorlevel=1 & goto :eof  & :: Exit error

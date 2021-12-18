@@ -51,10 +51,10 @@ set errorlevel=1 & goto :eof  & :: Exit error
 :LB_NO_BINARIES
 
 echo [91mFreeType binaries not found, did you compile in RELEASE mode?[0m
-set /P c=Try again? [Y/n]: 
+set /P c4=Try again? [Y/n]: 
 set repeat=true
-if /I "%c%" EQU "n" set repeat=false
-if /I "%c%" EQU "N" set repeat=false
+if /I "%c4%" EQU "n" set repeat=false
+if /I "%c4%" EQU "N" set repeat=false
 if %repeat% == true goto LB_BUILD
 
 set errorlevel=1 & goto :eof  & :: Exit error
