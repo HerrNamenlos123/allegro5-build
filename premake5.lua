@@ -17,14 +17,10 @@ include "modules/libpng"
 -- zlib library
 include "modules/zlib"
 
+-- FreeType library
+include "modules/freetype"
 
 
--- Freetype
-externalproject "freetype"
-location "modules/freetype/build"
-uuid "57940020-8E99-AEB6-271F-61E0F7F6B73D"
-kind "StaticLib"
-language "C++"
 
 
 -- The Allegro5 projects
