@@ -4,3 +4,12 @@
 [submodule "modules/harfbuzz"]
 	path = modules/harfbuzz
 	url = https://github.com/harfbuzz/harfbuzz.git
+[submodule "modules/freetype"]
+	path = modules/freetype
+	url = https://github.com/HerrNamenlos123/freetype.git
+[submodule "modules/libpng"]
+	path = modules/libpng
+	url = https://github.com/HerrNamenlos123/libpng.git
+[submodule "modules/zlib"]
+	path = modules/zlib
+	url = https://github.com/HerrNamenlos123/zlib.git
