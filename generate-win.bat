@@ -25,7 +25,7 @@ set _generator=vs2019
 echo Generating project ...
 
 ::call "%~dp0scripts\generate-freetype.bat"
-::call "%~dp0scripts\generate-allegro5.bat"
+call "%~dp0scripts\generate-allegro5.bat"
 
 cd %~dp0
 premake5\windows\premake5.exe %_generator% && start allegro5.sln
