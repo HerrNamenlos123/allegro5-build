@@ -33,3 +33,8 @@
 
 # Allegro 5 binaries submodule
 modules/allegro5-binaries
+
+.vs
+build
+bin
+*.sln

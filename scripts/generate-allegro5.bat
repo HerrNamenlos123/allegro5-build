@@ -14,12 +14,12 @@ cmake .. -Wno-dev -DPREFER_STATIC_DEPS=true -DSHARED=false -DWANT_DOCS=false -DW
 
 if %errorlevel% neq 0 echo [91mCMake was unsuccessful[0m & set errorlevel=0 & goto :eof
 
-echo.
-set /P c5= [92mCheck the output, is everything correct? [0m[Y/n]: 
-set correct=true
-if /I "%c5%" EQU "n" set correct=false
-if /I "%c5%" EQU "N" set correct=false
-if %correct% == false goto LB_ERROR
+::echo.
+::set /P c5= [92mCheck the output, is everything correct? [0m[Y/n]: 
+::set correct=true
+::if /I "%c5%" EQU "n" set correct=false
+::if /I "%c5%" EQU "N" set correct=false
+::if %correct% == false goto LB_ERROR
 
 echo.
 echo [94m======== Done generating build files for Allegro5 ===========[0m
