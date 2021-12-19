@@ -2,7 +2,7 @@
 
 
 -- Main Solution
-workspace "Allegro5"
+workspace "allegro5"
     configurations { "RelWithDebInfo" }
 
     platforms { "x64" }
