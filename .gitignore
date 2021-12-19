@@ -38,3 +38,4 @@ modules/allegro5-binaries
 build
 bin
 *.sln
+!premake5/**
