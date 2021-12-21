@@ -27,15 +27,29 @@ echo Generating project ...
 mkdir "%~dp0modules\allegro5\build" 2>NUL
 cd "%~dp0modules\allegro5\build"
 
-cmake .. -Wno-dev -DPREFER_STATIC_DEPS=true -DSHARED=false -DWANT_DOCS=false -DWANT_DOCS_HTML=false ^
--DWANT_EXAMPLES=false -DWANT_FONT=true -DWANT_MONOLITH=true -DWANT_TESTS=false -DWANT_RELEASE_LOGGING=false ^
--DWANT_STATIC_RUNTIME=true -DFREETYPE_INCLUDE_DIRS=../freetype/src;../freetype/include ^
--DFREETYPE_LIBRARIES=../freetype/build/Release/freetype.lib
+cmake .. -Wno-dev ^
+    -DPREFER_STATIC_DEPS=true ^
+    -DSHARED=false ^
+    -DWANT_DOCS=false ^
+    -DWANT_DOCS_HTML=false ^
+    -DWANT_EXAMPLES=false ^
+    -DWANT_FONT=true ^
+    -DWANT_MONOLITH=true ^
+    -DWANT_TESTS=false ^
+    -DWANT_RELEASE_LOGGING=false ^
+    -DWANT_STATIC_RUNTIME=true ^
+    -DFREETYPE_INCLUDE_DIRS=../freetype/src;../freetype/include ^
+    -DFREETYPE_LIBRARIES=../freetype/build/Release/freetype.lib ^
+    -DPNG_INCLUDE_DIR=../libpng/include/;../zlib/include/ ^
+    -DPNG_LIBRARIES=../libpng/bin/libpng.lib
 
 if %errorlevel% neq 0 echo [91mCMake was unsuccessful[0m & Pause & exit 1
 
+echo.
 cd %~dp0
-premake5\windows\premake5.exe %_generator% & rem start allegro5.sln
+premake5\windows\premake5.exe %_generator% && start allegro5.sln
+echo.
+
 if %errorlevel% neq 0 Pause & exit 1
 
 Pause
