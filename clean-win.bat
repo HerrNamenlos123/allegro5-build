@@ -17,7 +17,23 @@ echo Cleaning bin directory...
 echo Cleaning build directory...
 2>NUL rmdir /s /q "%~dp0/build"
 
-call "%~dp0scripts\clean-freetype.bat"
-call "%~dp0scripts\clean-allegro5.bat"
+echo Cleaning Allegro 5 directory...
+2>NUL rmdir /s /q "%~dp0/modules/allegro5/bin"
+2>NUL rmdir /s /q "%~dp0/modules/allegro5/build"
+
+echo Cleaning freetype directory...
+2>NUL rmdir /s /q "%~dp0/modules/freetype/bin"
+2>NUL rmdir /s /q "%~dp0/modules/freetype/build"
+
+echo Cleaning libpng directory...
+2>NUL rmdir /s /q "%~dp0/modules/libpng/bin"
+2>NUL rmdir /s /q "%~dp0/modules/libpng/build"
+
+echo Cleaning zlib directory...
+2>NUL rmdir /s /q "%~dp0/modules/zlib/bin"
+2>NUL rmdir /s /q "%~dp0/modules/zlib/build"
+
+::call "%~dp0scripts\clean-freetype.bat"
+::call "%~dp0scripts\clean-allegro5.bat"
 
 Timeout 5

@@ -45,9 +45,9 @@ echo Done
 echo.
 ::echo [92mEverything was successful, now go to [94mmodules/allegro5-binaries[92m and push the repository to github.com[0m
 echo [92mEverything was successful, pushing binaries to github.com ...[0m
-cd modules\allegro5-binaries
-git status
+cd modules\allegro5-binaries
 git add .
+git status
 git commit -m "Updated binaries"
 git push
 
