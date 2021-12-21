@@ -30,4 +30,4 @@ call "%~dp0scripts\generate-allegro5.bat"
 cd %~dp0
 premake5\windows\premake5.exe %_generator% && start allegro5.sln
 if %errorlevel% neq 0 Pause && exit 1
-Timeout 5
+Pause
