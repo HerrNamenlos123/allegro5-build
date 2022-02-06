@@ -36,6 +36,7 @@ cmake .. -Wno-dev ^
     -DWANT_FONT=true ^
     -DWANT_MONOLITH=true ^
     -DWANT_TESTS=false ^
+    -DWANT_DEMO=false ^
     -DWANT_RELEASE_LOGGING=false ^
     -DWANT_STATIC_RUNTIME=true ^
     -DFREETYPE_INCLUDE_DIRS=../freetype/src;../freetype/include ^
