@@ -19,7 +19,6 @@
 set _generator=vs2019               & rem Only for premake! CMake is not set! 
 
 
-
 :: =============================================================================================
 
 echo Generating project ...
@@ -44,7 +43,7 @@ cmake .. -Wno-dev ^
     -DPNG_INCLUDE_DIR=../libpng/include/;../zlib/include/ ^
     -DPNG_LIBRARIES=../libpng/bin/libpng.lib
 
-if %errorlevel% neq 0 echo [91mCMake was unsuccessful[0m & Pause & exit 1
+if %errorlevel% neq 0 goto CMAKE_ERROR
 
 echo.
 cd %~dp0
@@ -54,3 +53,11 @@ echo.
 if %errorlevel% neq 0 Pause & exit 1
 
 Pause
+exit 1
+
+:CMAKE_ERROR
+echo [91mCMake was unsuccessful[0m
+echo [94mDid you install all dependencies?[0m
+echo   [94m- DirectX SDK (https://www.microsoft.com/en-us/download/details.aspx?id=6812)[0m
+Pause
+exit 1
